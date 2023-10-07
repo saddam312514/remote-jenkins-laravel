@@ -53,8 +53,8 @@ agent any
                     // Define the local file path
                     def localFileEnv = '/var/lib/jenkins/workspace/.env'
                     def localFileProject = '/var/lib/jenkins/workspace/laravel-project-pipeline/'
-                    sh "sudo scp ${localFileEnv} ${remoteServer}:${remoteFilePath}"
-                    sh "sudo scp ${localFileProject}/*.tar.gz ${remoteServer}:${remoteFilePath}"
+                    sh "scp -i ${localFileEnv} ${remoteServer}:${remoteFilePath}"
+                    sh "scp -i ${localFileProject}/*.tar.gz ${remoteServer}:${remoteFilePath}"
                  
                     sh 'ssh ansadmin@192.168.1.20 "cd /var/www/html/beta/ && sudo tar -xvf laravel-project.tar.gz"'
                     sh 'ssh ansadmin@192.168.1.20 "cd /var/www/html/beta/ && sudo composer update && cd /var/www/html/beta/ && sudo composer install && sudo php artisan key:generate && sudo php artisan migrate"'
