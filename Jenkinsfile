@@ -46,8 +46,8 @@ agent any
                     // Execute remote commands here
                     //sh 'ssh ansadmin@192.168.1.20 "sudo cp -rp /var/lib/jenkins/workspace/Deploy_Application_Staging_laravel/* /var/www/html/beta"'
                     sh 'ssh ansadmin@192.168.1.20 "sudo mkdir -p /var/www/html/beta"'
-                    sh 'ssh ansadmin@192.168.1.20 "sudo scp -r /var/lib/jenkins/workspace/.env /var/www/html/beta"'
-                    sh 'ssh ansadmin@192.168.1.20 "sudo scp -r /var/lib/jenkins/workspace/laravel-project-pipeline/*.tar.gz /var/www/html/beta"'
+                    sh 'ssh ansadmin@192.168.1.20 "sudo cp -r /var/lib/jenkins/workspace/.env /var/www/html/beta/"'
+                    sh 'ssh ansadmin@192.168.1.20 "sudo cp -r /var/lib/jenkins/workspace/laravel-project-pipeline/*.tar.gz /var/www/html/beta"'
                  
                     sh 'ssh ansadmin@192.168.1.20 "cd /var/www/html/beta/ && sudo tar -xvf laravel-project.tar.gz"'
                     sh 'ssh ansadmin@192.168.1.20 "cd /var/www/html/beta/ && sudo composer update && cd /var/www/html/beta/ && sudo composer install && sudo php artisan key:generate && sudo php artisan migrate"'
