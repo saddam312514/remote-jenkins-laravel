@@ -9,7 +9,7 @@ agent any
         stage('Remote Execution') {
             steps {
                 script {
-                    sshagent(credentials: ['ansibles-test']) {
+                    sshagent(credentials: ['ansible-test']) {
                         // Execute remote commands here
                         sh 'ssh ansadmin@192.168.1.20 "mkdir /home/ansadmin/anirak"'
                     }
