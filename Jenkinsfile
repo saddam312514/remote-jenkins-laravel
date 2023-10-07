@@ -58,9 +58,10 @@ agent any
                  
                     sh 'ssh ansadmin@192.168.1.20 "cd /var/www/html/beta/ && sudo tar -xvf laravel-project.tar.gz"'
                     sh 'ssh ansadmin@192.168.1.20 "cd /var/www/html/beta/ && sudo composer update && cd /var/www/html/beta/ && sudo composer install && sudo php artisan key:generate && sudo php artisan migrate"'
-                    sh 'ssh ansadmin@192.168.1.20 "sudo chown -R www-data:www-data /var/www/html/beta/"'
+                    sh 'ssh ansadmin@192.168.1.20 "sudo chown -R ansadmin:ansadmin /var/www/html/beta/"'
                     sh 'ssh ansadmin@192.168.1.20 "sudo chmod -R 775 /var/www/html/beta/storage"'
                     sh 'ssh ansadmin@192.168.1.20 "sudo rm -fr /var/www/html/beta/*.tar.gz"'
+                    sh 'ssh ansadmin@192.168.1.20 "sudo setfacl -R --modify user:ansadmin:rwx /var/www/html/beta"'
                     }
                 }
             }
