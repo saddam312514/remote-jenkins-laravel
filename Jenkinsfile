@@ -46,6 +46,7 @@ agent any
                     // Execute remote commands here
                     //sh 'ssh ansadmin@192.168.1.20 "sudo cp -rp /var/lib/jenkins/workspace/Deploy_Application_Staging_laravel/* /var/www/html/beta"'
                     sh 'ssh ansadmin@192.168.1.20 "sudo mkdir -p /var/www/html/beta"'
+                    sh 'ssh ansadmin@192.168.1.20 "sudo chown -R ansadmin:ansadmin /var/www/html/beta"'
                     // Define the remote server details
                     def remoteServer = 'ansadmin@192.168.1.20'
                     def remoteFilePath = '/var/www/html/beta/'
