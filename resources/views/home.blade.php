@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('Welcome saddm dashboard hi hiiiiiiiiiiiiiiiiii') }}
+                    {{ __('Welcome to saddam dashboard. until that bye bye') }}
                 </div>
             </div>
         </div>
