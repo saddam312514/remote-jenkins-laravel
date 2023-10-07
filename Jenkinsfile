@@ -45,7 +45,7 @@ agent any
                     sshagent(credentials: ['ansible-test']) {
                     // Execute remote commands here
                     //sh 'ssh ansadmin@192.168.1.20 "sudo cp -rp /var/lib/jenkins/workspace/Deploy_Application_Staging_laravel/* /var/www/html/beta"'
-                    sh 'ssh ansadmin@192.168.1.20 "mkdir -p /var/www/html/beta"'
+                    sh 'ssh ansadmin@192.168.1.20 "sudo mkdir -p /var/www/html/beta"'
                     sh 'ssh ansadmin@192.168.1.20 "sudo scp -r /var/lib/jenkins/workspace/.env /var/www/html/beta"'
                     sh 'ssh ansadmin@192.168.1.20 "sudo scp -r /var/lib/jenkins/workspace/laravel-project-pipeline/*.tar.gz /var/www/html/beta"'
                  
