@@ -11,7 +11,7 @@ agent any
                 script {
                     sshagent(credentials: ['ansible-test']) {
                         // Execute remote commands here
-                        sh 'ssh ansadmin@192.168.1.20 "mkdir /home/ansadmin/anirak"'
+                        sh 'ssh ansadmin@192.168.1.20 "mkdir -p /home/ansadmin/anirak"'
                     }
                 }
             }
